@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple and elegant games for Android. Discover Checkers and more games on Google Play.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#050814">
+  <title>Simple Games | Play Simple. Think Smart.</title>
+
+  <style>
+    :root {
+      --bg: #050814;
+      --panel: #0b1220;
+      --text: #f5f7fb;
+      --muted: #aab3c5;
+      --line: rgba(255,255,255,.10);
+      --accent: #19b8ff;
+      --accent-2: #ff9f0a;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(0, 153, 255, .10), transparent 32rem),
+        radial-gradient(circle at 90% 30%, rgba(255, 153, 0, .08), transparent 28rem),
+        var(--bg);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    main { padding: 48px 0 64px; }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .intro h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      line-height: 1.1;
+    }
+
+    .intro p {
+      margin: 0 auto;
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .games {
+      display: grid;
+      gap: 28px;
+    }
+
+    .game-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(11, 18, 32, .84);
+      box-shadow: 0 22px 55px rgba(0,0,0,.25);
+    }
+
+    .game-banner {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1024 / 500;
+      object-fit: cover;
+      background: #02040a;
+    }
+
+    .game-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .game-info h2 {
+      margin: 0 0 6px;
+      font-size: 1.55rem;
+    }
+
+    .game-info p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .play-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 190px;
+      padding: 13px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #0878ff);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .18s ease, filter .18s ease;
+    }
+
+    .play-button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .coming-soon {
+      border-style: dashed;
+      opacity: .72;
+    }
+
+    .coming-soon .placeholder {
+      display: grid;
+      place-items: center;
+      min-height: 220px;
+      padding: 24px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(25,184,255,.08), rgba(255,159,10,.08));
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 36px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 720px) {
+      header { padding-top: 20px; }
+      main { padding-top: 34px; }
+      .brand,
+      .game-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .play-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container brand">
+      <div class="brand-name">Simple Games</div>
+      <div class="tagline">Play Simple. Think Smart.</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <h1>Simple games. Smart challenges.</h1>
+      <p>Clean, fast and accessible games for Android. Pick a game and start playing.</p>
+    </section>
+
+    <section class="games" aria-label="Our games">
+      <article class="game-card">
+        <img
+          class="game-banner"
+          src="checkers-banner.png"
+          alt="Checkers - Play Simple! Think Smart"
+          width="1024"
+          height="500"
+        >
+        <div class="game-content">
+          <div class="game-info">
+            <h2>Checkers</h2>
+            <p>Challenge the AI with 5 difficulty levels, from Easy to Daemon.</p>
+          </div>
+
+          <!-- Replace # with the real Google Play Store URL -->
+          <a class="play-button" href="https://play.google.com/store/apps/dev?id=8677360716997725617" target="_blank" rel="noopener noreferrer" aria-label="Get Checkers on Google Play">
+            Get it on Google Play
+          </a>
+        </div>
+      </article>
+
+      <!-- Ready for the next game/banner. Remove this block if you want only Checkers for now. -->
+      <article class="game-card coming-soon">
+        <div class="placeholder">
+          Next game coming soon
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>&copy; <span id="year"></span> Simple Games</div>
+      <nav class="footer-links" aria-label="Footer links">
+        <!-- Replace these URLs with your existing pages -->
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
